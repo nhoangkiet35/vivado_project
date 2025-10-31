@@ -1,10 +1,8 @@
-# LAB \& EXAM – ADCA
-
----
+# LAB & EXAM – ADCA
 
 ## LAB
 
-Hãy vẽ sơ đồ khối, bảng chân trị,  code Verilog (Design và Testbench), chụp hình dạng sóng Testbench. Tạo từng folder riêng và nộp làm ASM môn ADCA.
+Hãy vẽ sơ đồ khối, bảng chân trị, code Verilog (Design và Testbench), chụp hình dạng sóng Testbench. Tạo từng folder riêng và nộp làm ASM môn ADCA.
 
 1. Half Adder
 2. Full adder

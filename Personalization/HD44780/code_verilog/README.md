@@ -43,7 +43,7 @@ Clock --------> |-->|   LCD Controller    |---|--> lcd_rw
 | ---------------- | -------------------- | ------------------------ | ---------------------------------------------------- |
 | **`char_mem.v`** | index (vị trí ký tự) | ASCII code (8-bit)       | Giữ nội dung hiển thị                                |
 | **`lcd.v`**      | clk, rst, data_in    | lcd_rs, lcd_en, lcd_data | Điều khiển timing và giao tiếp 4-bit                 |
-| **`top.v`**      | clk, rst             | lcd_*                    | Gọi `char_mem` và `lcd`, tạo FSM hiển thị từng ký tự |
+| **`top.v`**      | clk, rst             | lcd\_\*                  | Gọi `char_mem` và `lcd`, tạo FSM hiển thị từng ký tự |
 
 **Luồng dữ liệu:**
 
@@ -61,15 +61,15 @@ top.v FSM → chọn địa chỉ ký tự → char_mem.v → trả về ASCII
 ## 💡 4️⃣ Cách hiển thị trên LCD 1602
 
 1. LCD khởi tạo bằng chuỗi lệnh:
-   1. Function Set (`0x28`)
-   2. Display On (`0x0C`)
-   3. Clear Display (`0x01`)
-   4. Entry Mode (`0x06`)
+    1. Function Set (`0x28`)
+    2. Display On (`0x0C`)
+    3. Clear Display (`0x01`)
+    4. Entry Mode (`0x06`)
 2. Sau đó, `top.v` gửi tuần tự ký tự từ `char_mem.v` qua `lcd.v`.
 3. `lcd.v` tách mỗi ký tự 8-bit thành 2 nibble:
-   1. Gửi nibble cao trước, nibble thấp sau.
-   2. Mỗi nibble có **Enable pulse ≥ 450ns**.
-   3. Giữa mỗi lệnh có delay ~40 µs.
+    1. Gửi nibble cao trước, nibble thấp sau.
+    2. Mỗi nibble có **Enable pulse ≥ 450ns**.
+    3. Giữa mỗi lệnh có delay ~40 µs.
 4. LCD tự động hiển thị ký tự tại vị trí con trỏ, sau đó tự di chuyển sang phải.
 
 | Bước                                              | Mục đích            | File chịu trách nhiệm |
@@ -83,35 +83,35 @@ top.v FSM → chọn địa chỉ ký tự → char_mem.v → trả về ASCII
 
 ### 🔹 Bước 1: Tổ chức project trong Vivado
 
-* Tạo project mới: `Vivado → Create Project → RTL Project`
-* Thêm 3 file:
+- Tạo project mới: `Vivado → Create Project → RTL Project`
+- Thêm 3 file:
 
-  ```plaintext
-  add sources:
-  ├── char_mem.v
-  ├── lcd.v
-  └── top.v   ← module chính
-  ```
+    ```plaintext
+    add sources:
+    ├── char_mem.v
+    ├── lcd.v
+    └── top.v   ← module chính
+    ```
 
-* Đặt `top.v` làm  **Top Module** .
-* Mapping pin constraints (`.xdc`): Gán tín hiệu với chân thật của LCD (ví dụ PYNQ Z2)
+- Đặt `top.v` làm **Top Module** .
+- Mapping pin constraints (`.xdc`): Gán tín hiệu với chân thật của LCD (ví dụ PYNQ Z2)
 
-  ```xml
-  set_property -dict PACKAGE_PIN Y11 [get_ports lcd_rs]
-  set_property -dict PACKAGE_PIN Y12 [get_ports lcd_en]
-  set_property -dict PACKAGE_PIN W11 [get_ports {lcd_data[0]}]
-  set_property -dict PACKAGE_PIN V11 [get_ports {lcd_data[1]}]
-  set_property -dict PACKAGE_PIN T5  [get_ports {lcd_data[2]}]
-  set_property -dict PACKAGE_PIN U10 [get_ports {lcd_data[3]}]
-  set_property IOSTANDARD LVCMOS33 [get_ports *]
-  ```
+    ```xml
+    set_property -dict PACKAGE_PIN Y11 [get_ports lcd_rs]
+    set_property -dict PACKAGE_PIN Y12 [get_ports lcd_en]
+    set_property -dict PACKAGE_PIN W11 [get_ports {lcd_data[0]}]
+    set_property -dict PACKAGE_PIN V11 [get_ports {lcd_data[1]}]
+    set_property -dict PACKAGE_PIN T5  [get_ports {lcd_data[2]}]
+    set_property -dict PACKAGE_PIN U10 [get_ports {lcd_data[3]}]
+    set_property IOSTANDARD LVCMOS33 [get_ports *]
+    ```
 
 ### 🔹 Bước 2: Mô phỏng (Simulation)
 
 Nếu bạn muốn **kiểm tra logic và timing** trước khi nạp vào FPGA, hãy tạo file testbench:
 Quan sát các tín hiệu:
 
-* lcd_en có các xung đều đặn,
-* lcd_rs thay đổi giữa command/data,
-* lcd_data truyền từng nibble 4-bit,
-* thời gian delay (40 µs – 2 ms) đúng chuẩn HD44780.
+- lcd_en có các xung đều đặn,
+- lcd_rs thay đổi giữa command/data,
+- lcd_data truyền từng nibble 4-bit,
+- thời gian delay (40 µs – 2 ms) đúng chuẩn HD44780.

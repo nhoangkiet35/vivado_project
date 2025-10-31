@@ -6,15 +6,15 @@ PWM (Pulse Width Modulation) — hay Điều chế độ rộng xung — là m�
 
 Tín hiệu PWM là một chuỗi xung vuông có hai trạng thái:
 
-* **ON (mức cao)** – dòng điện hoặc điện áp được cấp.
-* **OFF (mức thấp)** – không có dòng hoặc điện áp.
-Mỗi chu kỳ của tín hiệu PWM có chu kỳ (period) là 𝑇, gồm thời gian bật 𝑇𝑜𝑛 và thời gian tắt 𝑇𝑜𝑓𝑓.
+- **ON (mức cao)** – dòng điện hoặc điện áp được cấp.
+- **OFF (mức thấp)** – không có dòng hoặc điện áp.
+  Mỗi chu kỳ của tín hiệu PWM có chu kỳ (period) là 𝑇, gồm thời gian bật 𝑇𝑜𝑛 và thời gian tắt 𝑇𝑜𝑓𝑓.
 
-        ```
-        𝑇 = 𝑇𝑜𝑛 + 𝑇𝑜𝑓𝑓
-        ```
+            ```
+            𝑇 = 𝑇𝑜𝑛 + 𝑇𝑜𝑓𝑓
+            ```
 
-Tần số PWM:    `𝑓 = 1 / 𝑇`
+Tần số PWM: `𝑓 = 1 / 𝑇`
 
 ## 🔹 2. Hệ số nhiệm vụ (Duty Cycle)
 
@@ -38,11 +38,11 @@ Ví dụ:
 
 PWM rất phổ biến trong điều khiển thiết bị điện tử và nhúng, ví dụ:
 
-* ⚙️ Điều khiển tốc độ động cơ DC (bằng cách thay đổi điện áp trung bình).
-* 💡 Điều chỉnh độ sáng LED.
-* 🔊 Tạo tín hiệu analog giả lập (DAC).
-* 🧠 Điều khiển servo motor (trong robot, cánh tay cơ).
-* ⚡ Chuyển đổi nguồn (Switching Power Supply).
+- ⚙️ Điều khiển tốc độ động cơ DC (bằng cách thay đổi điện áp trung bình).
+- 💡 Điều chỉnh độ sáng LED.
+- 🔊 Tạo tín hiệu analog giả lập (DAC).
+- 🧠 Điều khiển servo motor (trong robot, cánh tay cơ).
+- ⚡ Chuyển đổi nguồn (Switching Power Supply).
 
 ## 🔹 4. Hình dạng sóng minh họa
 

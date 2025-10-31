@@ -45,21 +45,21 @@ Cứ mỗi giây, FSM sẽ tăng bộ đếm `timer`, và khi đạt đủ thờ
 ### 🧩 Mô tả module
 
 1. `clk_divider.v`
-   * Chia tần số clock từ 100 MHz → 1 Hz
-   * Dùng bộ đếm count để tạo xung vuông 1 giây
-   * Ngõ ra clk_out dùng làm nhịp cho FSM
+    - Chia tần số clock từ 100 MHz → 1 Hz
+    - Dùng bộ đếm count để tạo xung vuông 1 giây
+    - Ngõ ra clk_out dùng làm nhịp cho FSM
 
 2. `traffic_light_controller.v`
-    * Bộ điều khiển FSM gồm 4 trạng thái:
-      * S1_G1_R2: Mạch 1 xanh – Mạch 2 đỏ
-      * S2_Y1_R2: Mạch 1 vàng – Mạch 2 đỏ
-      * S3_R1_G2: Mạch 1 đỏ – Mạch 2 xanh
-      * S4_R1_Y2: Mạch 1 đỏ – Mạch 2 vàng
-    * Bộ đếm timer xác định thời gian từng pha.
+    - Bộ điều khiển FSM gồm 4 trạng thái:
+        - S1_G1_R2: Mạch 1 xanh – Mạch 2 đỏ
+        - S2_Y1_R2: Mạch 1 vàng – Mạch 2 đỏ
+        - S3_R1_G2: Mạch 1 đỏ – Mạch 2 xanh
+        - S4_R1_Y2: Mạch 1 đỏ – Mạch 2 vàng
+    - Bộ đếm timer xác định thời gian từng pha.
 
 3. `top_traffic_light.v`
-   * Module tổng hợp, kết nối clk_divider và traffic_light_controller
-   * Map các LED thực tế của PYNQ-Z2.
+    - Module tổng hợp, kết nối clk_divider và traffic_light_controller
+    - Map các LED thực tế của PYNQ-Z2.
 
 ### 🧮 Sơ đồ trạng thái FSM (Mermaid)
 
@@ -84,8 +84,8 @@ graph LR;
 
 ### 🎯 Kết quả mong đợi
 
-* Hai cụm LED sáng luân phiên:
-* Khi **M1 xanh → M2 đỏ**
-* Sau 5 giây, **M1 vàng** trong 2 giây
-* Sau đó **M2 xanh – M1 đỏ**, và tiếp tục lặp lại.
-* Chu kỳ đầy đủ kéo dài **14 giây thực tế**.
+- Hai cụm LED sáng luân phiên:
+- Khi **M1 xanh → M2 đỏ**
+- Sau 5 giây, **M1 vàng** trong 2 giây
+- Sau đó **M2 xanh – M1 đỏ**, và tiếp tục lặp lại.
+- Chu kỳ đầy đủ kéo dài **14 giây thực tế**.

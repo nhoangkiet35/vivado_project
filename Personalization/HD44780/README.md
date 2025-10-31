@@ -6,22 +6,22 @@
 
 **HD44780** là **IC điều khiển LCD ký tự** (LCD Character Controller) do hãng **Hitachi** phát triển.
 
-Nó là **“bộ não” điều khiển màn hình LCD ký tự** — ví dụ như loại **LCD 1602** hoặc  **LCD 2004** .
+Nó là **“bộ não” điều khiển màn hình LCD ký tự** — ví dụ như loại **LCD 1602** hoặc **LCD 2004** .
 
 👉 Nói dễ hiểu:
 
-> HD44780 giúp bạn  **giao tiếp với LCD qua các chân dữ liệu và điều khiển** , thay vì phải tự điều khiển từng điểm ảnh.
+> HD44780 giúp bạn **giao tiếp với LCD qua các chân dữ liệu và điều khiển** , thay vì phải tự điều khiển từng điểm ảnh.
 
 ### 📟 **2. LCD 1602 là gì?**
 
 **LCD 1602** nghĩa là:
 
-* **16** : mỗi hàng có 16 ký tự
-* **02** : có 2 hàng
+- **16** : mỗi hàng có 16 ký tự
+- **02** : có 2 hàng
 
 Mỗi ký tự được hiển thị trong một **ô ma trận 5x8 điểm** (pixel).
 
-=> Tổng cộng LCD 1602 có thể hiển thị  **32 ký tự** .
+=> Tổng cộng LCD 1602 có thể hiển thị **32 ký tự** .
 
 ### ⚙️ **3. Cấu tạo LCD 1602 (dùng HD44780)**
 
@@ -34,7 +34,7 @@ Mỗi ký tự được hiển thị trong một **ô ma trận 5x8 điểm** (p
 
 ### 🧠 **4. Giao tiếp 8-bit vs 4-bit**
 
-HD44780 hỗ trợ  **2 chế độ giao tiếp dữ liệu** :
+HD44780 hỗ trợ **2 chế độ giao tiếp dữ liệu** :
 
 | Chế độ    | Dây dữ liệu | Đặc điểm                                                      |
 | --------- | ----------- | ------------------------------------------------------------- |
@@ -51,8 +51,8 @@ RS, E, D4, D5, D6, D7  (+ VSS, VDD, V0)
 
 Khi bạn muốn gửi 1 byte dữ liệu (ví dụ `0x41 = 'A'`):
 
-* Gửi **4 bit cao (0100)** trước
-* Gửi **4 bit thấp (0001)** sau
+- Gửi **4 bit cao (0100)** trước
+- Gửi **4 bit thấp (0001)** sau
 
 LCD sẽ ghép lại thành 8-bit (`01000001`) để hiển thị ký tự `'A'`.
 
@@ -140,15 +140,15 @@ Một vài lệnh phổ biến của HD44780:
 
 ## 🕔 Timing Sequence Characteristics
 
-Hiểu **timing (thời gian truyền dữ liệu)** của **LCD 1602 (IC điều khiển HD44780)** là **rất quan trọng** — vì nếu  **gửi lệnh quá nhanh** , LCD **chưa kịp xử lý** → màn hình sẽ  **hiển thị sai hoặc không hiển thị gì cả** .
+Hiểu **timing (thời gian truyền dữ liệu)** của **LCD 1602 (IC điều khiển HD44780)** là **rất quan trọng** — vì nếu **gửi lệnh quá nhanh** , LCD **chưa kịp xử lý** → màn hình sẽ **hiển thị sai hoặc không hiển thị gì cả** .
 
 ### ⚙️ 1. Tổng quan về **chu kỳ giao tiếp (timing cycle)**
 
-Mỗi khi bạn  **gửi lệnh hoặc dữ liệu** , LCD cần:
+Mỗi khi bạn **gửi lệnh hoặc dữ liệu** , LCD cần:
 
 1. **Ổn định tín hiệu dữ liệu (D4–D7, RS, RW)**
 2. **Tạo xung Enable (E)** để LCD “chốt” dữ liệu
-3. **Chờ LCD xử lý nội bộ** (gọi là  *execution time* )
+3. **Chờ LCD xử lý nội bộ** (gọi là _execution time_ )
 
 ### ⏱️ 2. **Tín hiệu chính và vai trò timing**
 
@@ -165,15 +165,15 @@ Ví dụ: bạn gửi `0x41` (chữ `'A'` = `8'b0100_0001`)
 
 1️⃣ **Gửi nửa byte cao (0100)**
 
-* Đặt `RS`, `RW`, `D4–D7`
-* Đưa **E = 1 → 0** để chốt
-* Đợi 1–2 µs
+- Đặt `RS`, `RW`, `D4–D7`
+- Đưa **E = 1 → 0** để chốt
+- Đợi 1–2 µs
 
 2️⃣ **Gửi nửa byte thấp (0001)**
 
-* Đặt `RS`, `RW`, `D4–D7`
-* Đưa **E = 1 → 0**
-* Đợi 37 µs hoặc nhiều hơn (LCD xử lý ký tự)
+- Đặt `RS`, `RW`, `D4–D7`
+- Đưa **E = 1 → 0**
+- Đợi 37 µs hoặc nhiều hơn (LCD xử lý ký tự)
 
 ### 📉 4. **Thông số timing quan trọng (theo datasheet HD44780)**
 
@@ -186,15 +186,15 @@ Ví dụ: bạn gửi `0x41` (chữ `'A'` = `8'b0100_0001`)
 | Execution time (thời gian xử lý lệnh)        | `t_exec`       | ≈ 37 µs           |
 | Execution time của lệnh “Clear” hoặc “Home”  | `t_exec_clear` | ≈ 1.52 ms         |
 
-📘  **Giải thích** :
+📘 **Giải thích** :
 
-* `t_exec = 37 µs`: LCD cần ~37 micro giây để thực thi hầu hết các lệnh (ghi ký tự, set cursor, v.v.)
-* `t_exec_clear = 1.52 ms`: xóa màn hình mất lâu hơn vì LCD phải ghi lại toàn bộ bộ nhớ hiển thị.
+- `t_exec = 37 µs`: LCD cần ~37 micro giây để thực thi hầu hết các lệnh (ghi ký tự, set cursor, v.v.)
+- `t_exec_clear = 1.52 ms`: xóa màn hình mất lâu hơn vì LCD phải ghi lại toàn bộ bộ nhớ hiển thị.
 
 ![image](https://www.exploreembedded.com/wiki/images/0/0b/LCD_CmdWrite.jpg)
 
-* Khi  **E chuyển từ 1 → 0** , LCD sẽ **lấy dữ liệu trên D4–D7** (và RS, RW).
-* Sau đó, LCD bắt đầu xử lý nội bộ → **cần delay ~37 µs** (hoặc lâu hơn với Clear, Home).
+- Khi **E chuyển từ 1 → 0** , LCD sẽ **lấy dữ liệu trên D4–D7** (và RS, RW).
+- Sau đó, LCD bắt đầu xử lý nội bộ → **cần delay ~37 µs** (hoặc lâu hơn với Clear, Home).
 
 ### 📘 5. **Ví dụ thời gian thực cho 1 byte dữ liệu**
 
@@ -221,8 +221,8 @@ Nếu LCD hiển thị 16 ký tự → 16 × 40 µs = **640 µs ≈ 0.64 ms** �
 
 ### 💡 6. **Cách tối ưu timing**
 
-* Dùng **“busy flag”** (chân D7 ở chế độ đọc RW=1) để kiểm tra LCD đã sẵn sàng chưa, thay vì delay cố định.
-* Nhưng trong thực tế, **hầu hết lập trình nhúng dùng delay cố định** vì đơn giản và đủ ổn định.
+- Dùng **“busy flag”** (chân D7 ở chế độ đọc RW=1) để kiểm tra LCD đã sẵn sàng chưa, thay vì delay cố định.
+- Nhưng trong thực tế, **hầu hết lập trình nhúng dùng delay cố định** vì đơn giản và đủ ổn định.
 
 ### 🔚 Tóm tắt dễ nhớ
 
@@ -249,11 +249,11 @@ Nếu LCD hiển thị 16 ký tự → 16 × 40 µs = **640 µs ≈ 0.64 ms** �
 
 Nói cách khác:
 
-> Function Set là **bước cấu hình đầu tiên** mà bạn gửi cho LCD để nó biết bạn đang dùng  **4-bit hay 8-bit** , có  **mấy dòng hiển thị** , và  **kiểu font ký tự** . **Mục đích**: Thiết lập giao tiếp (4/8 bit), số dòng, font ký tự
+> Function Set là **bước cấu hình đầu tiên** mà bạn gửi cho LCD để nó biết bạn đang dùng **4-bit hay 8-bit** , có **mấy dòng hiển thị** , và **kiểu font ký tự** . **Mục đích**: Thiết lập giao tiếp (4/8 bit), số dòng, font ký tự
 
 ### ⚙️ 2️⃣ **Cú pháp (command code) của Function Set**
 
-Cấu trúc lệnh Function Set gồm  **8 bit** :
+Cấu trúc lệnh Function Set gồm **8 bit** :
 
 | Bit | Ký hiệu | Chức năng                     | Ghi chú    |
 | --- | ------- | ----------------------------- | ---------- |
@@ -281,15 +281,15 @@ Cấu trúc lệnh Function Set gồm  **8 bit** :
 | 8-bit, 2 dòng, 5x8 font | `0x38`   | `00111000b` |
 | 4-bit, 2 dòng, 5x8 font | `0x28`   | `00101000b` |
 
-=> Khi lập trình ở chế độ  **4-bit** , ta thường dùng:  `lcd_command(0x28);`
+=> Khi lập trình ở chế độ **4-bit** , ta thường dùng: `lcd_command(0x28);`
 
 ### 📘 5️⃣ **Function Set trong chuỗi khởi tạo (Initialization Sequence)**
 
-Khi LCD bật lên, nó  **không biết bạn muốn dùng 4-bit hay 8-bit** , nên cần  **chuỗi lệnh Function Set đặc biệt** .
+Khi LCD bật lên, nó **không biết bạn muốn dùng 4-bit hay 8-bit** , nên cần **chuỗi lệnh Function Set đặc biệt** .
 
 #### 🔹 Trường hợp dùng **4-bit mode**
 
-Theo  **datasheet HD44780** , quy trình chuẩn là:
+Theo **datasheet HD44780** , quy trình chuẩn là:
 
 | Bước | Gửi gì                                                          | Ý nghĩa                                 |
 | ---- | --------------------------------------------------------------- | --------------------------------------- |
@@ -308,13 +308,13 @@ Theo  **datasheet HD44780** , quy trình chuẩn là:
 
 Cấu trúc lệnh `001(DL)(N)(F)00`
 
-* Gửi nibble cao `0010` (0x2)
-* Gửi nibble thấp `1000` (0x8)
-* Mỗi nibble có:
-  * `E` pulse width ≥ 450 ns
-  * `Data setup ≥ 140 ns`
-  * `Data hold ≥ 10 ns`
-* Sau khi hoàn tất, LCD cần **t_exec = 37 µs** để xử lý.
+- Gửi nibble cao `0010` (0x2)
+- Gửi nibble thấp `1000` (0x8)
+- Mỗi nibble có:
+    - `E` pulse width ≥ 450 ns
+    - `Data setup ≥ 140 ns`
+    - `Data hold ≥ 10 ns`
+- Sau khi hoàn tất, LCD cần **t_exec = 37 µs** để xử lý.
 
 #### 🔹 Dạng sóng thời gian (Timing Diagram)
 

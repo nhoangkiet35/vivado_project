@@ -2,9 +2,9 @@
 
 🧩 Mục tiêu
 
-* Mỗi khi nhấn nút (button), LED sẽ sáng hơn một mức.
-* Khi đạt đến độ sáng tối đa, nhấn tiếp sẽ quay lại mức sáng thấp nhất.
-* Độ sáng LED được điều khiển bằng PWM.
+- Mỗi khi nhấn nút (button), LED sẽ sáng hơn một mức.
+- Khi đạt đến độ sáng tối đa, nhấn tiếp sẽ quay lại mức sáng thấp nhất.
+- Độ sáng LED được điều khiển bằng PWM.
 
 ⚙️ 1. Cấu trúc hệ thống
 

@@ -1,0 +1,9 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_simple_ram/project_x_simple_ram.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_simple_ram/project_x_simple_ram.srcs/sim_1/new/ram_bidirectional_async_tb.sv,1758982664,systemVerilog,,,,ram_bidirectional_async_tb,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_simple_ram/project_x_simple_ram.srcs/sim_1/new/simple_ram_tb.sv,1758978504,systemVerilog,,,,simple_ram_tb,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_simple_ram/project_x_simple_ram.srcs/sources_1/new/ram_bidirectional_async.v,1758982414,verilog,,,,ram_bidirectional_async,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_simple_ram/project_x_simple_ram.srcs/sources_1/new/simple_ram.v,1758978412,verilog,,,,simple_ram,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,

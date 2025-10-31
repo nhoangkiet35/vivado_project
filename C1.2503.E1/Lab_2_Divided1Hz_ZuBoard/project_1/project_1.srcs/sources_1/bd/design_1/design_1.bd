@@ -1,0 +1,112 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x77D488E877D488E8",
+      "device": "xczu1cg-sbva484-1-e",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "zynq_ultra_ps_e_0": "",
+      "clk_divider_1hz_0": ""
+    },
+    "ports": {
+      "clk_1Hz_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "zynq_ultra_ps_e_0": {
+        "vlnv": "xilinx.com:ip:zynq_ultra_ps_e:3.5",
+        "ip_revision": "7",
+        "xci_name": "design_1_zynq_ultra_ps_e_0_0",
+        "xci_path": "ip\\design_1_zynq_ultra_ps_e_0_0\\design_1_zynq_ultra_ps_e_0_0.xci",
+        "inst_hier_path": "zynq_ultra_ps_e_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "PSU_DDR_RAM_HIGHADDR_OFFSET": {
+            "value": "0x00000002"
+          },
+          "PSU_DDR_RAM_LOWADDR_OFFSET": {
+            "value": "0x20000000"
+          },
+          "PSU__DDR_HIGH_ADDRESS_GUI_ENABLE": {
+            "value": "0"
+          },
+          "PSU__USE__M_AXI_GP2": {
+            "value": "0"
+          }
+        }
+      },
+      "clk_divider_1hz_0": {
+        "vlnv": "xilinx.com:module_ref:clk_divider_1hz:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_clk_divider_1hz_0_0",
+        "xci_path": "ip\\design_1_clk_divider_1hz_0_0\\design_1_clk_divider_1hz_0_0.xci",
+        "inst_hier_path": "clk_divider_1hz_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider_1hz",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_100MHz": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "99999001",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "clk_1Hz": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_divider_1hz_0_clk_1Hz": {
+        "ports": [
+          "clk_divider_1hz_0/clk_1Hz",
+          "clk_1Hz_0"
+        ]
+      },
+      "zynq_ultra_ps_e_0_pl_clk0": {
+        "ports": [
+          "zynq_ultra_ps_e_0/pl_clk0",
+          "clk_divider_1hz_0/clk_100MHz"
+        ]
+      },
+      "zynq_ultra_ps_e_0_pl_resetn0": {
+        "ports": [
+          "zynq_ultra_ps_e_0/pl_resetn0",
+          "clk_divider_1hz_0/rst_n"
+        ]
+      }
+    }
+  }
+}

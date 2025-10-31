@@ -1,0 +1,8 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_left_shift_register/project_x_left_shift_register.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_left_shift_register/project_x_left_shift_register.srcs/sim_1/new/left_shift_register_tb.sv,1758810365,systemVerilog,,,,left_shift_register_tb,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_left_shift_register/project_x_left_shift_register.srcs/sources_1/new/d_ff_async.v,1758809736,verilog,,C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_left_shift_register/project_x_left_shift_register.srcs/sources_1/new/left_shift_register.v,,d_ff_async,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/C1.2503.E1/VLSI_Verify/project_x_left_shift_register/project_x_left_shift_register.srcs/sources_1/new/left_shift_register.v,1758810137,verilog,,,,left_shift_register,,uvm,../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,

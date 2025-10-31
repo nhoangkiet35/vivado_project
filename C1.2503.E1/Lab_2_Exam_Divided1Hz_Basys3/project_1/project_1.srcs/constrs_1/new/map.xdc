@@ -1,0 +1,6 @@
+set_property PACKAGE_PIN W5 [get_ports clk_100MHz]
+set_property PACKAGE_PIN L1 [get_ports clk_1Hz]
+set_property PACKAGE_PIN R2 [get_ports rst_n]
+set_property IOSTANDARD LVCMOS33 [get_ports clk_100MHz]
+set_property IOSTANDARD LVCMOS33 [get_ports clk_1Hz]
+set_property IOSTANDARD LVCMOS33 [get_ports rst_n]

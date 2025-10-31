@@ -1,0 +1,4 @@
+domain_path: C:\Users\hkngu\Documents\Vivado\VLSI_Verify\project_00_hello_led\vitis\pynq_z2_platform\export\pynq_z2_platform\sw\standalone_ps7_cortexa9_0
+app_src_dir: C:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\empty_application
+template: empty_application
+lang: c

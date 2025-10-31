@@ -1,0 +1,8 @@
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_t_0[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_t_0[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_t_0[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_t_0[0]}]
+set_property PACKAGE_PIN F8 [get_ports {counter_t_0[3]}]
+set_property PACKAGE_PIN F7 [get_ports {counter_t_0[2]}]
+set_property PACKAGE_PIN E8 [get_ports {counter_t_0[1]}]
+set_property PACKAGE_PIN G6 [get_ports {counter_t_0[0]}]

@@ -1,0 +1,9 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sim_1/new/tb_debounce_project_top.sv,1761112372,systemVerilog,,,,tb_debounce_project_top,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sources_1/new/debounce_filter.v,1761111160,verilog,,C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sources_1/new/debounce_project_top.v,,debounce_filter,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sources_1/new/debounce_project_top.v,1761111191,verilog,,C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sources_1/new/led_toggle.v,,debounce_project_top,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/getting_started_with_fpga_pynq_z2/project_4_debounce/project_4_debounce.srcs/sources_1/new/led_toggle.v,1761111175,verilog,,,,led_toggle,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,

@@ -4,9 +4,10 @@
 
 Dự án **PYNQ-Z2 RGB Controller** là một mini-project FPGA sử dụng:
 
-* **KY-040 Rotary Encoder** để chọn hiệu ứng,
-* **Dải LED WS2812 (Neopixel)** để hiển thị màu sắc và animation,
-* **Module giải mã xoay (Rotary Decoder)** + **WS2812 precise timing driver** viết hoàn toàn bằng Verilog.
+- **KY-040 Rotary Encoder** để chọn hiệu ứng,
+- **Dải LED WS2812 (Neopixel)** để hiển thị màu sắc và animation,
+- **Module giải mã xoay (Rotary Decoder)** + **WS2812 precise timing driver** viết hoàn toàn bằng Verilog.
+- [Video Demo](https://youtu.be/tHSJSIIlqwI)
 
 Mục tiêu của dự án là luyện kỹ năng thiết kế mạch số thời gian thực, xử lý tín hiệu từ encoder, debounce, giải mã rotary, và tạo đèn sáng chuẩn cho WS2812.
 
@@ -78,15 +79,15 @@ Hệ thống hỗ trợ nhiều animation khác nhau và xoay encoder để chuy
 
 ## 🧮 Nguyên lý hoạt động
 
-* Khi xoay  **encoder** , module quadrature decoder tạo ra:
-  * **step pulse**
-  * **direction bit**
-* Bộ **pattern selector** tăng/giảm mode.
-* **Pattern generator** tạo buffer chứa giá trị RGB của từng LED.
-* **WS2812 driver** encode từng bit theo chuẩn timing:
-  * Logic 1 → 0.8µs high + 0.45µs low
-  * Logic 0 → 0.4µs high + 0.85µs low
-* LED strip hiển thị animation tương ứng.
+- Khi xoay **encoder** , module quadrature decoder tạo ra:
+  - **step pulse**
+  - **direction bit**
+- Bộ **pattern selector** tăng/giảm mode.
+- **Pattern generator** tạo buffer chứa giá trị RGB của từng LED.
+- **WS2812 driver** encode từng bit theo chuẩn timing:
+  - Logic 1 → 0.8µs high + 0.45µs low
+  - Logic 0 → 0.4µs high + 0.85µs low
+- LED strip hiển thị animation tương ứng.
 
 ## 👨‍💻 Tác giả
 

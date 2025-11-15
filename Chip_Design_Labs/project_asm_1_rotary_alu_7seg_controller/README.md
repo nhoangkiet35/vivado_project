@@ -7,6 +7,7 @@ Dự án Rotary Encoder FSM Calculator là một mini-project trên FPGA board P
 - Mạch **KY-040 Rotary Encoder** (nhập dữ liệu và chọn chế độ),
 - Mạch **4-digit 7-segment LED sử dụng 74HC595**,
 - Và **FSM (Finite State Machine)** điều khiển logic hoạt động như một máy tính mini thực hiện các phép toán đơn giản trên FPGA.
+- [Video Demo](https://youtu.be/al8Qorwf2lA)
 
 Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống số bằng Verilog HDL, kết hợp các khối logic, giải mã, đếm, quét hiển thị (multiplexing) và giao tiếp tuần tự.
 

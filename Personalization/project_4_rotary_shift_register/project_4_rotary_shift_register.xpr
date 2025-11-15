@@ -157,16 +157,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/Lab_12_Shift_Register_Count_0000-9999_PYNQ_Z2/Divided_1Hz.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../C1.2503.E1/Lab_12_Shift_Register_Count_0000-9999_PYNQ_Z2/Divided_1Hz.v"/>
-          <Attr Name="ImportTime" Val="1758023575"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top_rotary_7seg"/>

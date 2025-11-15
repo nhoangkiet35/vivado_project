@@ -1,0 +1,20 @@
+📝 Hướng dẫn dùng & lưu ý
+1. Clock: Mặc định modules đặt CLK_FREQ_HZ = 100_000_000. Nếu board bạn dùng 50 MHz hoặc 125 MHz, sửa tham số tương ứng trong instances (ở lcd_driver / lcd1602_controller / top nếu cần dùng tham số).
+
+2. Pin mapping to physical board:
+
+lcd_data[3:0] -> connect to LCD D7..D4 (order matches [7:4]).
+
+lcd_rs -> RS pin (LCD pin 4).
+
+lcd_rw -> RW pin (LCD pin 5) — module ties RW to 0 (write-only).
+
+lcd_en -> E pin (LCD pin 6).
+
+lcd_vo -> VO (contrast, LCD pin 3). If your VO expects an analog voltage, route pwm through RC filter or use an op-amp/PWM-to-analog. Don't tie raw PWM if module expects DC (it may flicker). For testing connecting VO to PWM often works with visible contrast; best practice is RC low-pass.
+
+3. char_mem.v: edit the STR literal to change the two lines (each exactly 16 chars). Keep both lines 16 chars each.
+
+4. Timing: lcd_driver waits longer for commands 0x01 and 0x02 (clear & home). Other commands use typical 40 µs. These constants are parameterizable.
+
+5. Simulation: To simulate, instantiate top_lcd1602 with CLK_FREQ_HZ matching testbench clock, then observe lcd_data, lcd_rs, lcd_en handshake. For real hardware, synthesize & map pins.

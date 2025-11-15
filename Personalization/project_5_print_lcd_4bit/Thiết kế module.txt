@@ -1,0 +1,67 @@
+Here is a complete set of 7 Verilog files, modular, synthesizeable, and without # delays. The design assumes a 100 MHz system clk (parameters are available). Modules:
+
+pwm_gen.v — 
+lcd_print_xy.v — 
+lcd_cmd.v — 
+lcd_init.v — 
+lcd_driver.v — 
+lcd1602_controller.v — 
+top_lcd1602.v — 
+
+Comment each file carefully. I can edit CLK_FREQ_HZ if my clock is 125 MHz / 50 MHz / 100 MHz.
+
+Code reference:
+```verilog
+// pwm_gen.v
+// Generic PWM generator module.
+// This module generates a PWM signal for controlling the LCD contrast (VO pin).
+// Parameterized for duty cycle and frequency.
+// Assumes system clock frequency via CLK_FREQ_HZ parameter.
+// Synthesizable, no # delays, uses counters for timing.
+
+module pwm_gen #(
+    parameter CLK_FREQ_HZ = 100000000,  // System clock frequency in Hz (e.g., 100MHz, editable for 125MHz/50MHz)
+    parameter PWM_FREQ_HZ = 1000,       // Desired PWM frequency in Hz
+    parameter DUTY_CYCLE_PERCENT = 50   // Duty cycle in percent (0-100)
+) (
+    input wire clk,                     // System clock
+    input wire rst_n,                   // Active-low reset
+    output reg pwm_out                  // PWM output signal
+);
+
+// Calculate period and high time in clock cycles
+localparam PERIOD_CLKS = CLK_FREQ_HZ / PWM_FREQ_HZ;  // Clock cycles per PWM period
+localparam HIGH_CLKS = (DUTY_CYCLE_PERCENT * PERIOD_CLKS) / 100;  // Clock cycles PWM is high
+
+reg [$clog2(PERIOD_CLKS)-1:0] counter;  // Counter for PWM timing
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        counter <= 0;
+        pwm_out <= 0;
+    end else begin
+        if (counter < PERIOD_CLKS - 1) begin
+            counter <= counter + 1;
+        end else begin
+            counter <= 0;
+        end
+        pwm_out <= (counter < HIGH_CLKS) ? 1'b1 : 1'b0;
+    end
+end
+
+endmodule
+```
+
+Ideas about read a string:
+```verilog
+    parameter LINES = 2,
+    parameter CHARS = 16,
+    parameter [LINES*CHARS*8-1:0] STR = { " PYNQ-Z2 && LCD ", " Hello, world!  " }  
+    input [4:0] addr  // Địa chỉ ký tự (0-31 cho 32 ký tự)
+    output [7:0] bus   // Dữ liệu ký tự
+
+    // Logic map addr sang bus (như snippet của bạn)
+    localparam TOTAL = LINES * CHARS;
+    wire [11:0] bit_index = (TOTAL*8 - 1) - (addr * 8);
+    assign bus = STR[bit_index -: 8];
+```

@@ -1,0 +1,9 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sim_1/new/tb_top.sv,1761898733,systemVerilog,,,,tb_top,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sources_1/new/char_mem.v,1761898461,verilog,,C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sources_1/new/lcd.v,,char_mem,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sources_1/new/lcd.v,1761898480,verilog,,C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sources_1/new/top.v,,lcd,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+C:/Users/hkngu/Documents/Vivado/Personalization/project_5_fpga_lcd1602_4bit_controller/project_5_fpga_lcd1602_4bit_controller.srcs/sources_1/new/top.v,1761898584,verilog,,,,top,,uvm,../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,

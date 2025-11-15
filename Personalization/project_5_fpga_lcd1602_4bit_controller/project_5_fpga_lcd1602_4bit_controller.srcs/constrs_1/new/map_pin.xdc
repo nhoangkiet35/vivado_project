@@ -1,0 +1,21 @@
+set_property IOSTANDARD LVCMOS33 [get_ports lcd_e_0]
+set_property IOSTANDARD LVCMOS33 [get_ports lcd_rs_0]
+set_property IOSTANDARD LVCMOS33 [get_ports {sf_d_0[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sf_d_0[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sf_d_0[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports lcd_rw_0]
+set_property PACKAGE_PIN Y18 [get_ports lcd_e_0]
+set_property PACKAGE_PIN Y16 [get_ports lcd_rs_0]
+set_property PACKAGE_PIN Y19 [get_ports lcd_rw_0]
+set_property PACKAGE_PIN W14 [get_ports {sf_d_0[8]}]
+set_property PACKAGE_PIN Y14 [get_ports {sf_d_0[9]}]
+set_property PACKAGE_PIN T11 [get_ports {sf_d_0[10]}]
+set_property PACKAGE_PIN T10 [get_ports {sf_d_0[11]}]
+
+
+set_property IOSTANDARD LVCMOS33 [get_ports lcd_vo_pwm_0]
+set_property IOSTANDARD LVCMOS33 [get_ports {sf_d_0[10]}]
+set_property PACKAGE_PIN Y17 [get_ports lcd_vo_pwm_0]
+
+set_property IOSTANDARD LVCMOS33 [get_ports vo_pwm_0]
+set_property PACKAGE_PIN Y17 [get_ports vo_pwm_0]

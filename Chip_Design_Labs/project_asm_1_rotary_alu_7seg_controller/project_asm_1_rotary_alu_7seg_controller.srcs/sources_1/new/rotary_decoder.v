@@ -22,61 +22,62 @@
 
 // Mỗi chu kỳ (00→01→11→10→00) tạo 1 inc/dec duy nhất.
 module rotary_decoder (
-    input  wire clk,                 // clock 100MHz
+    input  wire clk,                 // clock 125 MHz
     input  wire rst,                 // reset active high
     input  wire enc_a, enc_b,        // tín hiệu từ encoder
     output reg  step_up, step_down   // xung output
 );
-    // --- Hybrid reset:  2-stage synchronizers ---
-    reg a_s1, a_s2;
-    reg b_s1, b_s2;
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            a_s1 <= 0; a_s2 <= 0;
-            b_s1 <= 0; b_s2 <= 0;
-        end else begin
-            a_s1 <= enc_a; a_s2 <= a_s1;
-            b_s1 <= enc_b; b_s2 <= b_s1;
-        end
+    // 1) Đồng bộ tín hiệu chống metastability
+    reg enc_a1, enc_a2, enc_b1, enc_b2;
+    always @(posedge clk) begin
+        enc_a1 <= enc_a;  enc_a2 <= enc_a1;
+        enc_b1 <= enc_b;  enc_b2 <= enc_b1;
     end
-    
-    // Lưu trạng thái hiện tại và trước đó của 2 bit A,B
-    wire [1:0] ab = {a_s2, b_s2};
 
-    // --- Theo dõi chuỗi 4 pha ---
-    reg [1:0] last_ab;
-    reg [2:0] seq_count;    // đếm số bước đã đi trong 1 chu kỳ
-    reg direction;          // 1=CW, 0=CCW
+    // 4 trạng thái hợp lệ: 00,01,11,10
+    wire [1:0] curr = {enc_a2, enc_b2};
+    reg  [1:0] prev;
+
+    // accumulator đếm chuyển động liên tục
+    // CW: +1 mỗi bước
+    // CCW: -1 mỗi bước
+    integer acc;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            last_ab   <= 2'b00;
-            seq_count <= 0;
-            direction <= 0;
+            prev       <= 2'b00;
+            acc        <= 0;
             step_up   <= 0;
             step_down <= 0;
         end else begin
-            step_up   <= 0;   // mặc định không phát xung
+            step_up   <= 0;
             step_down <= 0;
 
-            // Nếu trạng thái A/B thay đổi
-            if (ab != last_ab) begin
-                // --- Xác định hướng quay ---
-                // Khi A != B, hướng = (A xor last_B)
-                direction <= (a_s2 ^ last_ab[0]);
+            if (curr != prev) begin
+                case ({prev, curr})
+                    // ---- CW steps ----
+                    4'b00_10, 4'b10_11, 4'b11_01, 4'b01_00:
+                        acc <= acc + 1;
 
-                // Nếu khác trạng thái cũ => tăng bộ đếm bước
-                seq_count <= seq_count + 1;
-                last_ab   <= ab;
+                    // ---- CCW steps ----
+                    4'b00_01, 4'b01_11, 4'b11_10, 4'b10_00:
+                        acc <= acc - 1;
 
-                // Nếu quay đủ 4 bước và quay về 00 => phát xung
-                if (seq_count == 3 && ab == 2'b00) begin
-                    if (direction) step_up <= 1;
-                    else step_down <= 1;
-                    seq_count <= 0;
+                    // ---- Noise, glitch, bounce ----
+                    default: acc <= 0;   // reset cycle
+                endcase
+
+                prev <= curr;
+
+                // =============== FULL CYCLE FINISH (1 DETENT) ===============
+                if (acc == 4) begin
+                    step_up <= 1;
+                    acc <= 0;
+                end else if (acc == -4) begin
+                    step_down <= 1;
+                    acc <= 0;
                 end
             end
         end
     end
-
 endmodule

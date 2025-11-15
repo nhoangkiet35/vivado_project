@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.runs/impl_1'
+HD_PWD='C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,75 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1761399523">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1763050386">
+  <File Type="PA-TCL" Name="top_calculator.tcl"/>
   <File Type="REPORTS-TCL" Name="top_calculator_reports.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="top_calculator_power_summary_routed.pb"/>
-  <File Type="BITSTR-MMI" Name="top_calculator.mmi"/>
+  <File Type="INIT-TIMING" Name="top_calculator_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="top_calculator_opt.dcp"/>
   <File Type="OPT-DRC" Name="top_calculator_drc_opted.rpt"/>
-  <File Type="BG-DRC" Name="top_calculator.drc"/>
-  <File Type="ROUTE-STATUS-PB" Name="top_calculator_route_status.pb"/>
-  <File Type="BG-BGN" Name="top_calculator.bgn"/>
+  <File Type="OPT-UTIL" Name="top_calculator_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="top_calculator_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="top_calculator_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="top_calculator.hwdef"/>
+  <File Type="OPT-TIMING" Name="top_calculator_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="top_calculator_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="top_calculator_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="top_calculator_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="top_calculator_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="top_calculator_placed.dcp"/>
+  <File Type="PLACE-IO" Name="top_calculator_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="top_calculator_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="top_calculator_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="top_calculator_utilization_placed.pb"/>
-  <File Type="PLACE-IO" Name="top_calculator_io_placed.rpt"/>
-  <File Type="BG-BIN" Name="top_calculator.bin"/>
   <File Type="PLACE-CTRL" Name="top_calculator_control_sets_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="top_calculator_power_routed.rpx"/>
-  <File Type="BITSTR-MSK" Name="top_calculator.msk"/>
-  <File Type="BITSTR-RBT" Name="top_calculator.rbt"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="top_calculator_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="top_calculator_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="top_calculator_route_status.rpt"/>
-  <File Type="PA-TCL" Name="top_calculator.tcl"/>
-  <File Type="ROUTE-PWR" Name="top_calculator_power_routed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="top_calculator_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="top_calculator_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="top_calculator_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="top_calculator_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="top_calculator_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_calculator_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="top_calculator_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="top_calculator_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="top_calculator_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="top_calculator_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="top_calculator_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="top_calculator_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="top_calculator_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="top_calculator_utilization_routed.pb"/>
   <File Type="ROUTE-DRC" Name="top_calculator_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="top_calculator_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="top_calculator_drc_routed.pb"/>
-  <File Type="BITSTR-SYSDEF" Name="top_calculator.sysdef"/>
+  <File Type="ROUTE-DRC-RPX" Name="top_calculator_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="top_calculator_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_calculator_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="top_calculator.ltx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_calculator_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="top_calculator_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="top_calculator_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="top_calculator_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="top_calculator_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="top_calculator_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="top_calculator_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="top_calculator_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="top_calculator_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="top_calculator_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="top_calculator.vdi"/>
   <File Type="ROUTE-CLK" Name="top_calculator_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="top_calculator_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_calculator_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="top_calculator_bus_skew_routed.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_calculator_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_calculator_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_calculator_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_calculator_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_calculator_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BG-BIT" Name="top_calculator.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_calculator_bus_skew_postroute_physopted.pb"/>
-  <File Type="BITSTR-NKY" Name="top_calculator.nky"/>
-  <File Type="BITSTR-BMM" Name="top_calculator_bd.bmm"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-HWDEF" Name="top_calculator.hwdef"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="top_calculator_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DCP" Name="top_calculator_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="top_calculator_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="top_calculator_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMING-PB" Name="top_calculator_timing_summary_routed.pb"/>
-  <File Type="OPT-DCP" Name="top_calculator_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="top_calculator_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="top_calculator_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="top_calculator_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="top_calculator_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_calculator_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="top_calculator_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_calculator_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_calculator_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_calculator_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_calculator_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_calculator_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_calculator_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_calculator_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_calculator_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="top_calculator.bit"/>
+  <File Type="BG-BIN" Name="top_calculator.bin"/>
+  <File Type="BITSTR-MSK" Name="top_calculator.msk"/>
+  <File Type="BITSTR-RBT" Name="top_calculator.rbt"/>
+  <File Type="BITSTR-NKY" Name="top_calculator.nky"/>
+  <File Type="BITSTR-BMM" Name="top_calculator_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="top_calculator.mmi"/>
   <File Type="PDI-FILE" Name="top_calculator.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="top_calculator_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="top_calculator_pld.pdi"/>
   <File Type="RCFI_FILE" Name="top_calculator.rcfi"/>
   <File Type="CFI_FILE" Name="top_calculator.cfi"/>
   <File Type="RNPI_FILE" Name="top_calculator.rnpi"/>
+  <File Type="RCDO-FILE" Name="top_calculator.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="top_calculator_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="top_calculator_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="top_calculator_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="top_calculator_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="top_calculator_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="top_calculator_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="top_calculator_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="top_calculator_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="top_calculator_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="top_calculator_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="top_calculator_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="top_calculator_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="top_calculator_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="top_calculator_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="top_calculator_pld_unmask.rcdo"/>
   <File Type="NPI_FILE" Name="top_calculator.npi"/>
   <File Type="RBD_FILE" Name="top_calculator.rbd"/>
-  <File Type="ROUTE-RQS" Name="top_calculator_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="top_calculator_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="MMI-FILE" Name="top_calculator.mmi"/>
   <File Type="BIF-FILE" Name="top_calculator.bif"/>
   <File Type="BOOT-BIF-FILE" Name="top_calculator_boot.bif"/>
@@ -77,22 +100,17 @@
   <File Type="LTX-FILE" Name="top_calculator.ltx"/>
   <File Type="BOOT-LTX-FILE" Name="top_calculator_boot.ltx"/>
   <File Type="PL-LTX-FILE" Name="top_calculator_pld.ltx"/>
-  <File Type="RCDO-FILE" Name="top_calculator.rcdo"/>
-  <File Type="MARKER-RCDO-FILE" Name="top_calculator_markers.rcdo"/>
-  <File Type="PL-RCDO-FILE" Name="top_calculator_pld.rcdo"/>
-  <File Type="MARKER-RNPI-FILE" Name="top_calculator_markers.rnpi"/>
-  <File Type="BOOT_RNPI_FILE" Name="top_calculator_boot.rnpi"/>
-  <File Type="PL_RNPI_FILE" Name="top_calculator_pld.rnpi"/>
-  <File Type="BOOT_MARKER_RNPI_FILE" Name="top_calculator_boot_markers.rnpi"/>
-  <File Type="PL_MARKER_RNPI_FILE" Name="top_calculator_pld_markers.rnpi"/>
-  <File Type="PL_MASK_RNPI_FILE" Name="top_calculator_pld_mask.rnpi"/>
-  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="top_calculator_pld_shutdown.rnpi"/>
-  <File Type="PL_UNMASK_RNPI_FILE" Name="top_calculator_pld_unmask.rnpi"/>
-  <File Type="PL-CLEAR-RCDO-FILE" Name="top_calculator_pld_clear.rcdo"/>
-  <File Type="PL_MARKER_RCDO_FILE" Name="top_calculator_pld_markers.rcdo"/>
-  <File Type="PL_MASK_RCDO_FILE" Name="top_calculator_pld_mask.rcdo"/>
-  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="top_calculator_pld_unmask_markers.rcdo"/>
-  <File Type="PL_UNMASK_RCDO_FILE" Name="top_calculator_pld_unmask.rcdo"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="top_calculator.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="top_calculator.sysdef"/>
+  <File Type="BG-BGN" Name="top_calculator.bgn"/>
+  <File Type="BG-DRC" Name="top_calculator.drc"/>
+  <File Type="RDI-RDI" Name="top_calculator.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="top_calculator_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="top_calculator_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/Hex_to_7Seg.v">
@@ -175,49 +193,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/Divided_1Hz.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/Divided_1Hz.v"/>
-        <Attr Name="ImportTime" Val="1758023575"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top_calculator"/>
-      <Option Name="TopLib" Val="xil_defaultlib"/>
-      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/top_calculator.v"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/new/map_pin.xdc">
+    <File Path="$PSRCDIR/constrs_1/new/pin.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/map_pin.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/pin.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -246,8 +237,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_top_calculator_0_0"/>
 </GenRun>

@@ -1,4 +1,4 @@
-# 🏗️ TỔNG KẾT KIẾN TRÚC HỆ THỐNG ROTARY-ENCODER FSM CALC — PYNQ Z2 + 74HC595 + KY-040
+# 🏗️ Tổng Kết Kiến Trúc Hệ Thống Rotary-Encoder FSM Calc — PYNQ-Z2 + 74HC595 + KY-040
 
 ## 📘 Giới thiệu
 
@@ -8,7 +8,9 @@ Dự án Rotary Encoder FSM Calculator là một mini-project trên FPGA board P
 - Mạch **4-digit 7-segment LED sử dụng 74HC595**,
 - Và **FSM (Finite State Machine)** điều khiển logic hoạt động như một máy tính mini thực hiện các phép toán đơn giản trên FPGA.
 
-Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống số bằng Verilog HDL, kết hợp các khối logic, giải mã, đếm, quét hiển thị và giao tiếp tuần tự.
+Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống số bằng Verilog HDL, kết hợp các khối logic, giải mã, đếm, quét hiển thị (multiplexing) và giao tiếp tuần tự.
+
+![banner](./banner.png)
 
 ## ⚙️ Cấu trúc hệ thống
 
@@ -23,21 +25,7 @@ Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống
 
 ### 🧩 Sơ đồ khối
 
-```plaintext
-                     +---------------------------+
-                     |        PYNQ Z2 (FPGA)     |
-                     |                           |
-+----------------+   |  Rotary Decoder  → A,B,Op |
-| Rotary Encoder | → |     FSM Controller        |
-+----------------+   |          ↓                |
-                     |     Display Driver        |
-                     |  (74HC595 Serial Output)  |
-                     +---------------------------+
-                                ↓
-                     +--------------------+
-                     |  4-digit 7-seg LED |
-                     +--------------------+
-```
+![image](./project_1_asm_1_rotary_alu_7seg_controller.jpg)
 
 ### 🧠 Mô tả trạng thái (FSM)
 
@@ -62,13 +50,13 @@ Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống
 | DT         | `T11`    | Phase B                  |
 | SW         | `T10`    | Nút nhấn (opcode select) |
 
-#### 74HC595 + 7-Seg
+#### 74HC595 Shift Register
 
-| Chân  | FPGA Pin | Mô tả        |
-| ----- | -------- | ------------ |
-| DS    | `Y19`    | DIO (data)   |
-| SH_CP | `Y16`    | SCLK (shift) |
-| ST_CP | `Y17`    | RCLK (latch) |
+| Chân  | FPGA Pin | Mô tả                                  |
+| ----- | -------- | -------------------------------------- |
+| DS    | `Y19`    | DIO (data - Gửi bit dữ liệu)           |
+| SH_CP | `Y16`    | SCLK (shift - Dịch bit + nhận bit mới) |
+| ST_CP | `Y17`    | RCLK (latch - Chốt 8 bit ra output)    |
 
 ### 🧩 Cấu trúc mã nguồn
 
@@ -79,10 +67,10 @@ Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống
 |   ├── button_debounce      // Chống dội nút nhấn (SW)
 │   ├── fsm_controller.v     // FSM 4 trạng thái (A, B, Op, Result)
 │   ├── alu_calc.v           // Tính toán A ⊗ B
+│   ├── digit_scan.v         // Kết nối module hiển thị thứ tự số
 │   ├── shift_74hc595.v      // Xuất dữ liệu serial ra LED 7-seg
 │   ├── digit_driver.v       // Điều khiển hiển thị quét 4-digit
-│   ├── hex_to_7seg.v        // Giải mã số → dạng 7-segment
-│   └── Divided_1Hz.v        // Clock divider từ 100 MHz → 1 Hz hoặc tần số quét
+│   └── hex_to_7seg.v        // Giải mã số → dạng 7-segment
 ```
 
 ## 🧮 Nguyên lý hoạt động
@@ -94,18 +82,8 @@ Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống
 - **Nhấn SW**: Sang `STATE 3`, hiển thị kết quả `=z`.
 - **Nhấn SW lần nữa**: Reset toàn bộ và trở về `STATE 0`.
 
-## 💡 Mở rộng
-
-- Hiển thị giá trị âm hoặc số nhiều chữ số.
-- Lưu A/B vào BRAM hoặc giao tiếp UART để debug.
-- Tích hợp module ALU từ bài học VLSI/FPGA design.
-- Tăng số phép toán (AND, OR, XOR).
-- Giao tiếp với màn hình OLED thay cho LED 7-seg.
-
 ## 👨‍💻 Tác giả
 
-```
 Nguyễn Hữu Hoàng Kiệt —
 Sinh viên chương trình Thiết Kế Vi Mạch Bán Dẫn Quốc Tế FPT Jetking.
 Mục tiêu: phát triển kỹ năng thiết kế hệ thống nhúng và FPGA SoC (Zynq).
-```

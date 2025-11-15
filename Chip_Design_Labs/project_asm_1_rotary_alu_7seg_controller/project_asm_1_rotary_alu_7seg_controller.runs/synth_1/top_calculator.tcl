@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.runs/synth_1/top_calculator.tcl"
+  variable script "C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.runs/synth_1/top_calculator.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,12 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache C:/Users/hkngu/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-928-DESKTOP-APIEEJV/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/hkngu/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-10876-DESKTOP-APIEEJV/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -70,27 +67,27 @@ create_project -in_memory -part xc7z020clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.cache/wt [current_project]
-set_property parent.project_path C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.cache/wt [current_project]
+set_property parent.project_path C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/hkngu/AppData/Roaming/Xilinx/Vivado/2025.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo c:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.cache/ip [current_project]
+set_property ip_output_repo c:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/Hex_to_7Seg.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/alu_calc.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/button_debounce.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_driver.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_scan.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_selector.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/fsm_controller.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/rotary_decoder.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/shift_74hc595.v
-  C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/top_calculator.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/Hex_to_7Seg.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/alu_calc.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/button_debounce.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_driver.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_scan.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/digit_selector.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/fsm_controller.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/rotary_decoder.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/imports/project_asm_1_rotary_alu_7seg_controller/shift_74hc595.v
+  C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/sources_1/new/top_calculator.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -101,12 +98,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/constrs_1/new/map_pin.xdc
-set_property used_in_implementation false [get_files C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/constrs_1/new/map_pin.xdc]
+read_xdc C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/constrs_1/new/pin.xdc
+set_property used_in_implementation false [get_files C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/constrs_1/new/pin.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/hkngu/Documents/Vivado/Personalization/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/hkngu/Documents/Vivado/Chip_Design_Labs/project_asm_1_rotary_alu_7seg_controller/project_asm_1_rotary_alu_7seg_controller.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

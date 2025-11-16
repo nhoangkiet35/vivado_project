@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=vivado,xilinxvivado,c,c++,venv,python,vs,visualstudiocode,keil,orcad,kicad,certificates,codekit,blender,virtualenv,dotenv,node,jupyternotebooks,pycharm,pydev,circuitpython,docz,database,zig,windows,appcode,altium,yarn,macos,bazel,synopsysvcs,ats,cmake,flask,django,jetbrains,rails,xilinxise,xilinx,intellij,linux,data
 
 ### PRIVATE ###
-
-
+# Ignore Vivado Simulation Database Files
+*.wdb
 
 ### Altium ###
 # Previews Folders

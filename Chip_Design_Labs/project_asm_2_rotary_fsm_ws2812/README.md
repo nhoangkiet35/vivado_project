@@ -20,7 +20,7 @@ Mục tiêu của dự án là luyện kỹ năng thiết kế mạch số thờ
 | Thành phần                | Mô tả                               | Ghi chú                            |
 | ------------------------- | ----------------------------------- | ---------------------------------- |
 | **PYNQ Z2 FPGA Board**    | Xử lý logic, clock 125 MHz          | Xilinx Zynq-7020                   |
-| **KY-040 Rotary Encoder** | Chọn hiệu ứng LED bằng xoay và nhấn | Phase A, B, và nút SW (tuỳ chọn)   |
+| **KY-040 Rotary Encoder** | Chọn hiệu ứng LED bằng xoay và nhấn | Phase A, B, và nút SW   |
 | **WS2812 LED Strip**      | Hiển thị RGB                        | Cấp nguồn 5V riêng để chạy ổn định |
 | **Nguồn ngoài 5V**        | Cấp cho LED strip                   | FPGA chỉ cung cấp tín hiệu dữ liệu |
 

@@ -22,7 +22,7 @@ module lcd_driver(
                        " LCD 8-BIT MODE "};
     reg [7:0] text [0:31];
     integer i;
-    initial begin
+    always @(*) begin
         for (i = 0; i < 32; i = i + 1)
             text[i] = msg[(255 - i*8) -: 8];
     end
@@ -32,11 +32,11 @@ module lcd_driver(
         cnt <= cnt + 1;
 
         case (step)
-            // Clear Display
-            0:  if (cnt > DELAY_20MS)  begin lcd_db <= 8'h01; lcd_rs <= 0; lcd_e <= 1; step <= 1; cnt <= 0; end 
-            1:  if (cnt > DELAY_5MS)  begin lcd_e <= 0; step <= 2; cnt <= 0; end
             // Function set: 8-bit, 2 line, 5x8 font
-            2:  if (cnt > DELAY_20MS) begin lcd_db <= 8'h38; lcd_rs <= 0; lcd_rw <= 0; lcd_e <= 1; step <= 3; cnt <= 0; end
+            0:  if (cnt > DELAY_20MS) begin lcd_db <= 8'h38; lcd_rs <= 0; lcd_rw <= 0; lcd_e <= 1; step <= 1; cnt <= 0; end
+            1:  if (cnt > DELAY_5MS)  begin lcd_e <= 0; step <= 2; cnt <= 0; end
+            // Clear Display
+            2:  if (cnt > DELAY_2MS)  begin lcd_db <= 8'h01; lcd_rs <= 0; lcd_e <= 1; step <= 3; cnt <= 0; end 
             3:  if (cnt > DELAY_5MS)  begin lcd_e <= 0; step <= 4; cnt <= 0; end
             // Display ON, Cursor OFF, Blink OFF
             4:  if (cnt > DELAY_2MS)  begin lcd_db <= 8'h0C; lcd_rs <= 0; lcd_e <= 1; step <= 5; cnt <= 0; end 
@@ -95,6 +95,8 @@ module lcd_driver(
                     end
                 end
             end
+
+            40: begin lcd_e  <= 0; lcd_rs <= 0; lcd_rw <= 0; end
             
             // ------------------- DỪNG -------------------
             default: begin lcd_e <= 0; lcd_rs <= 0; step <= 40; cnt <= 0; end // Done

@@ -19,7 +19,7 @@ Mục tiêu của dự án là rèn luyện kỹ năng thiết kế hệ thống
 
 | Thành phần                    | Mô tả                                                         | Ghi chú                           |
 | ----------------------------- | ------------------------------------------------------------- | --------------------------------- |
-| **PYNQ Z2 FPGA Board**        | Xử lý toàn bộ logic, xung clock 100 MHz                       | Xilinx Zynq-7020                  |
+| **PYNQ Z2 FPGA Board**        | Xử lý toàn bộ logic, xung clock 125 MHz                       | Xilinx Zynq-7020                  |
 | **KY-040 Rotary Encoder**     | Nhập giá trị (A, B, opcode) và điều hướng giữa các trạng thái | Gồm 3 tín hiệu chính: CLK, DT, SW |
 | **74HC595 Shift Register**    | Điều khiển 4-digit 7-seg (0.36 inch) qua giao tiếp 3 dây      | Chân `SCLK`, `RCLK`, `DIO`        |
 | **4-Digit 7-Segment Display** | Hiển thị giá trị, ký hiệu phép toán và kết quả                | Common Anode                      |
